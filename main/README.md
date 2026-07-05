@@ -1,3 +1,7 @@
+# Appium Pytest framework to launch an application on an emulator
+
+-----------------------------------
+
 ### Installation Steps
 1. Configure and install JDK
 ```bash
