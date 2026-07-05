@@ -1,0 +1,14 @@
+*.egg-info/
+reports/
+screenshots/*
+logs/*
+apps/*
+*.apk
+venv/
+.env
+build/
+.idea/*
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

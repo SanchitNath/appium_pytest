@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flipkart-appium-framework"
+version = "0.1.0"
+description = "A Python Appium automation framework for testing the Flipkart app on Android emulators."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Sanchit Nath", email = "sanchitnath@example.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Testing",
+]
+
+# Core Automation Dependencies
+dependencies = [
+    "Appium-Python-Client>=4.0.0",
+    "pytest>=8.0.0",
+    "selenium>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "allure-pytest>=2.13.0",
+    "pytest-xdist>=3.5.0",
+    "pytest-html>=4.1.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+pythonpath = ["."]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s,%(msecs)03d [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+addopts = "-v --tb=short"            # Verbose output with clean, short error stacks
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pages*", "tests*"]
